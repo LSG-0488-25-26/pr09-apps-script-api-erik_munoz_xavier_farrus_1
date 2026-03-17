@@ -52,7 +52,7 @@ fun LoginScreen(
         )
         Spacer(modifier = Modifier.height(12.dp))
         Text(
-            text = "GameDB",
+            text = "Steam Games",
             style = MaterialTheme.typography.headlineLarge,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.primary
