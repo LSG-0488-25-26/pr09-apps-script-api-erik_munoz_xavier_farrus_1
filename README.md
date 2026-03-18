@@ -36,11 +36,12 @@ Este proyecto es una aplicación Android desarrollada por Xavier Farrús y Erik 
   - ![Crear](<img width="354" height="786" alt="Captura de pantalla 2026-03-18 223431" src="https://github.com/user-attachments/assets/a8d019f6-8149-4de3-be2f-a89bb31da3d5" />
 )
 - **Favoritos:**
-  - ![Favoritos](AQUÍ_URL_IMAGEN_FAVORITOS)
+  - ![Favoritos](<img width="345" height="791" alt="Captura de pantalla 2026-03-18 224720" src="https://github.com/user-attachments/assets/7e7e5c6a-c53a-4173-b3c2-ee461185280d" />
+)
 
 ## Video de YouTube
 
-- [Ver video](AQUÍ_URL_VIDEO_YOUTUBE)
+- [Ver video](https://youtu.be/Ka8YQpmvDIw)
 
 ## Cómo funciona
 
