@@ -26,10 +26,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        val apiKeyProp = secrets.getProperty("API_KEY") ?: ""
-        val baseUrlProp = secrets.getProperty("BASE_URL") ?: ""
-        buildConfigField("String", "API_KEY", "\"$apiKeyProp\"")
-        buildConfigField("String", "BASE_URL", "\"$baseUrlProp\"")
+        buildConfigField("String", "API_KEY", "\"${secrets.getProperty("API_KEY") ?: ""}\"")
+        buildConfigField("String", "BASE_URL", "\"${secrets.getProperty("BASE_URL") ?: ""}\"")
     }
 
     buildTypes {
