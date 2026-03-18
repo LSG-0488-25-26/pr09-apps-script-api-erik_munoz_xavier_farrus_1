@@ -24,13 +24,17 @@ Este proyecto es una aplicación Android desarrollada por Xavier Farrús y Erik 
 ## Funcionalidades
 
 - **Login:**
-  - ![Login](AQUÍ_URL_IMAGEN_LOGIN)
+  - ![Login](<img width="352" height="785" alt="Captura de pantalla 2026-03-18 223223" src="https://github.com/user-attachments/assets/3b62fb80-8f35-43c1-b862-dbc3c7711d63" />
+)
 - **Registro:**
-  - ![Registro](AQUÍ_URL_IMAGEN_REGISTER)
+  - ![Registro](<img width="354" height="787" alt="Captura de pantalla 2026-03-18 223301" src="https://github.com/user-attachments/assets/d79b61c7-c359-49fa-850b-f9ef513dc880" />
+)
 - **Listado:**
-  - ![Listado](AQUÍ_URL_IMAGEN_LISTADO)
+  - ![Listado](<img width="347" height="785" alt="Captura de pantalla 2026-03-18 223420" src="https://github.com/user-attachments/assets/57146648-e039-41c6-8698-dec9d701f147" />
+)
 - **Crear:**
-  - ![Crear](AQUÍ_URL_IMAGEN_CREAR)
+  - ![Crear](<img width="354" height="786" alt="Captura de pantalla 2026-03-18 223431" src="https://github.com/user-attachments/assets/a8d019f6-8149-4de3-be2f-a89bb31da3d5" />
+)
 - **Favoritos:**
   - ![Favoritos](AQUÍ_URL_IMAGEN_FAVORITOS)
 
