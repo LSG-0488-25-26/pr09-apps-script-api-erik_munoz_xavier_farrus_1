@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.appsscript.model.data.PostRequest
 import com.example.appsscript.model.repository.GamesRepository
 import kotlinx.coroutines.launch
+import android.util.Log
 
 class InsertViewModel(private val repository: GamesRepository) : ViewModel() {
 
@@ -81,8 +82,36 @@ class InsertViewModel(private val repository: GamesRepository) : ViewModel() {
                     _insertMessage.value = response.error ?: "Error al insertar"
                 }
             } catch (e: Exception) {
-                _insertSuccess.value = false
-                _insertMessage.value = e.message
+                // MANEJO DEL ERROR 405
+                // Google Apps Script tiene un bug conocido: después de procesar
+                // correctamente un POST e insertar los datos en el excel,
+                // devuelve un error 405 (Method Not Allowed).
+                //
+                // Hemos verificado que:
+                // 1. Los datos si se insertan en Google Sheets (comprobado manualmente)
+                // 2. Postman también funciona correctamente
+                // 3. El error 405 aparece solo en la respuesta HTTP, pero la operación
+                //    fue exitosa en el servidor
+                //
+                // Por lo tanto, tratamos este error como un caso de éxito
+                // para mejorar la experiencia del usuario, que no debe ver un error
+                // cuando en realidad todo ha funcionado correctamente.
+
+                if (e.message?.contains("405") == true ||
+                    e.message?.contains("Method Not Allowed") == true) {
+
+                    // ✅ Falso positivo: consideramos la operación como exitosa
+                    _insertSuccess.value = true
+                    _insertMessage.value = "✅ Juego insertado correctamente"
+
+
+                } else {
+                    _insertSuccess.value = false
+                    _insertMessage.value = "Error: ${e.message}"
+
+                    // Log del error real
+                    Log.e("InsertViewModel", "Error real en insertGame: ${e.message}", e)
+                }
             } finally {
                 _loading.value = false
             }
