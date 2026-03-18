@@ -12,7 +12,7 @@ Este proyecto es una aplicación Android desarrollada por Xavier Farrús y Erik 
 ## Recursos
 
 - **Documento Excel:** [Enlace al Excel](https://docs.google.com/spreadsheets/d/1zv7ESq1NR2FJOQa-R_0cZ3MzKBs7MRuoalvW3txv6qg/edit?usp=sharing)
-- **Script JS:** [Enlace al script JS](AQUÍ_EL_LINK_DEL_SCRIPT)
+- **Script JS:** Se puede acceder desde extensiones, Apps Scripts y ahi será visible el codigo. Todo esto atraves del link del excel de arriba.
 
 ## Configuración
 

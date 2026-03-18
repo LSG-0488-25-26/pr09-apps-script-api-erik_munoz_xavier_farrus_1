@@ -14,9 +14,7 @@ if (secretsFile.exists()) {
 
 android {
     namespace = "com.example.appsscript"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.appsscript"
@@ -24,10 +22,9 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "API_KEY", "\"${secrets.getProperty("API_KEY") ?: ""}\"")
-        buildConfigField("String", "BASE_URL", "\"${secrets.getProperty("BASE_URL") ?: ""}\"")
+        buildConfigField("String", "API_KEY", "\"${secrets["API_KEY"] ?: ""}\"")
+        buildConfigField("String", "BASE_URL", "\"${secrets["BASE_URL"] ?: ""}\"")
     }
 
     buildTypes {
@@ -39,13 +36,16 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         compose = true
         buildConfig = true
