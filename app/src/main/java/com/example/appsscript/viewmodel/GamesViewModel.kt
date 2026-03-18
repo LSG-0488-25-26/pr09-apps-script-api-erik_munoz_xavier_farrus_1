@@ -58,9 +58,16 @@ class GamesViewModel(
         }
     }
 
+    // Debounce sencillo: si el usuario escribe rápido, solo se filtra tras una pequeña pausa
+    // Esto evita que la app crashee por demasiadas búsquedas seguidas
+    private var searchJob: kotlinx.coroutines.Job? = null
     fun onSearchQueryChange(query: String) {
         _searchQuery.value = query
-        applyFilter()
+        searchJob?.cancel()
+        searchJob = viewModelScope.launch {
+            kotlinx.coroutines.delay(300) // 300 ms de espera tras la última tecla
+            applyFilter()
+        }
     }
 
     private fun applyFilter() {
