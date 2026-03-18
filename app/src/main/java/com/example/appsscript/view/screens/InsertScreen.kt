@@ -17,6 +17,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.appsscript.viewmodel.InsertViewModel
 
+import kotlinx.coroutines.delay
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InsertScreen(
@@ -29,6 +31,10 @@ fun InsertScreen(
     var owners by remember { mutableStateOf("") }
     var precio by remember { mutableStateOf("") }
 
+//Añadir delay de 2 segundos despues de crear un juego
+    var isWaitingForNavigation by remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope()
+
     val loading by viewModel.loading.observeAsState(false)
     val message by viewModel.insertMessage.observeAsState()
     val success by viewModel.insertSuccess.observeAsState()
@@ -37,9 +43,14 @@ fun InsertScreen(
     val precioError by viewModel.precioError.observeAsState()
 
     LaunchedEffect(success) {
-        if (success == true) {
+        if (success == true && !isWaitingForNavigation) {
+            isWaitingForNavigation = true
+
+            delay(1500)
+
             navController.popBackStack()
             viewModel.clearMessage()
+            isWaitingForNavigation = false
         }
     }
 
